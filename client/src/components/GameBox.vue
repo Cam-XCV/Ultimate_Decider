@@ -29,10 +29,12 @@ export default {
         eventBus.$on('playerOneIncrease', () => {
             this.playerOneMatchScore += 1
             setTimeout(this.checkForWinner, 2000)
+            this.randomiseGame()
         })
          eventBus.$on('playerTwoIncrease', () => {
             this.playerTwoMatchScore += 1
             setTimeout(this.checkForWinner, 2000)
+            this.randomiseGame()
         })
         eventBus.$on('game-started', () => {
             this.randomiseGame()
@@ -42,19 +44,9 @@ export default {
 
     methods: {
         randomiseGame() {
-          this.selectedGame = Math.floor((Math.random() * 2))
+            this.selectedGame = Math.floor((Math.random() * 2))
         },
         
-        // checkForWinner(){
-        //     if (this.playerOneMatchScore + this.playerTwoMatchScore === 5){
-        //         if (this.playerOneMatchScore > this.playerTwoMatchScore){
-        //             this.overallWinner = this.playerOne.name
-        //         } else {
-        //             this.overallWinner = this.playerTwo.name
-        //         }
-
-        //     }
-        // }
 
         checkForWinner(){
         if (this.playerOneMatchScore >= 3){
