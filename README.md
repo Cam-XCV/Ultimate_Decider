@@ -1,2 +1,2 @@
 
-![test](/preview_images/rps.png)
+!(/preview_images/RPS.png)
